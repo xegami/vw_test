@@ -1,14 +1,14 @@
 data class Position(var x: Int, var y: Int, var orientation: Char) {
-    fun moveForward() {
+    fun forward(xLimit: Int, yLimit: Int) {
         when (orientation) {
-            'N' -> y++
-            'E' -> x++
-            'S' -> y--
-            'W' -> x--
+            'N' -> if (yLimit > y) y++
+            'E' -> if (xLimit > x) x++
+            'S' -> if (y > 0) y--
+            'W' -> if (x > 0) x--
         }
     }
 
-    fun rotateLeft() {
+    fun turnLeft() {
         orientation = when (orientation) {
             'N' -> 'W'
             'E' -> 'N'
@@ -18,7 +18,7 @@ data class Position(var x: Int, var y: Int, var orientation: Char) {
         }
     }
 
-    fun rotateRight() {
+    fun turnRight() {
         orientation = when (orientation) {
             'N' -> 'E'
             'E' -> 'S'

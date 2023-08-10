@@ -1,4 +1,4 @@
-class Floor(private val maxX: Int, private val maxY: Int) {
+class Floor(private val xLimit: Int, private val yLimit: Int) {
     private val robots = mutableListOf<Robot>()
 
     fun addRobot(robot: Robot) {
@@ -7,7 +7,7 @@ class Floor(private val maxX: Int, private val maxY: Int) {
 
     fun startRobots() {
         for (robot in robots) {
-            robot.readInputs()
+            robot.readInputs(xLimit, yLimit)
         }
     }
 
