@@ -28,7 +28,7 @@ data class Position(var x: Int, var y: Int, var orientation: Char) {
         }
     }
 
-    override fun toString(): String {
+    fun getCurrentPosition(): String {
         return "$x $y $orientation"
     }
 }

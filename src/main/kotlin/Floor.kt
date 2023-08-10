@@ -13,7 +13,7 @@ class Floor(private val xLimit: Int, private val yLimit: Int) {
 
     fun printPositions() {
         for (robot in robots) {
-            println(robot.position)
+            println(robot.position.getCurrentPosition())
         }
     }
 }
